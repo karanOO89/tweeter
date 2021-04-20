@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.colWhite {
+  color: white;
+}
+
+.textSan{
+    font-family: "Source Sans Pro";
+    font-size: .9em;
+    margin-left:.2em;
+    align-items: center;
+}
+.writeDiv{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.arrow {
+    display: flex;
+    color: red;
+    padding: 0px !important;
+    /* align-self:auto; */
+   /* margin-top: 0px !important; */
+}
+.textLeft {  
+  font-size: 1.5em;
+  font-family: "Bungee";
+}
+nav {
+  padding :1.5em;
+  display: flex;
+  font-family: "Source Sans Pro";
+  min-height: 120px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4056a1;
+  width: 100%;
+}
