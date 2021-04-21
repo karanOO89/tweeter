@@ -65,6 +65,10 @@ html {
     font-size: .5em;
     font-family: "Bungee";
   }
+  .counter-red{
+   
+    color:red
+  }
 
 /* .new-tweet h2{
   /* align-items:center */
