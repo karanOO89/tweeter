@@ -9,11 +9,14 @@ $(document).ready(function () {
     console.log(newCounter);
 
     if (newCounter < 0) {
+      console.log(newCounter);
       counter.addClass("counter-red");
-    }else{
+    } else {
+      $("#errNoValue").slideUp();
+      $("#errExceededValue").slideUp();
       counter.removeClass("counter-red");
     }
-   
+
     counter.html(newCounter);
   });
 });

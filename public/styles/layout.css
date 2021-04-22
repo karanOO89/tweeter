@@ -45,7 +45,6 @@ main {
   border-left: 0px;
   border-right: 0px;
   border-bottom: 4px solid;
-  /* color: black; */
   max-height: 2.25em;
   align-items: center;
   outline: none;
@@ -58,16 +57,22 @@ main {
 }
 .new-tweet form {
   padding-bottom: 2em;
+  margin-top: 1em;
 }
 .new-tweet div {
   display: flex;
   justify-content: space-between;
 }
-.new-tweet div button {
+#btnSubmit {
   color: white;
   background-color: #4056a1;
   font-size: 0.5em;
   font-family: "Bungee";
+  padding: 0.5em;
+}
+#btnSubmit:hover{
+  box-shadow: 5px 5px 5px rgba(26, 39, 156, 0.8);
+  transition: box-shadow .2s ease-in-out;
 }
 .new-tweet div output {
   font-size: 0.5em;
@@ -147,7 +152,22 @@ article:hover #tweetHandle {
   display: flex;
   flex-direction: column-reverse;
 }
-
+#errNoValue{
+  padding:.5em;
+  display: flex;
+  text-align: center;
+  border:2px solid red;
+  display: none;
+  color: red;
+}
+#errExceededValue{
+  padding:.5em;
+  display: flex;
+  text-align: center;
+  border:2px solid red;
+  display: none;
+  color: red;
+}
 /* .new-tweet h2{
   /* align-items:center */
 /* } */

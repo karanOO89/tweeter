@@ -4,44 +4,51 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 // Test / driver code (temporary). Eventually will get this from the server.
+const valdidation = (val) => {
+  if (val.length === 0) {
+    $("#errExceededValue").slideUp();
+    $("#errNoValue").slideDown();
+    return false;
+  }
+  if (val.length > 140) {
+    $("#errNoValue").slideUp();
+    $("#errExceededValue").slideDown();
+    return false;
+  }
+  return true;
+};
 $(document).ready(function () {
   loadTweets();
-  $("#tweetForm").submit(function (event) {
-      //element
-      event.preventDefault();
-      
-      let txtVal = $("#tweet-text").val();
-      console.log(txtVal);
-      if (txtVal.length === 0){
-          alert("That hum.... had no decibel!!!")
-        }
-        if (txtVal.length > 140){
-            alert("Ooooo!!! too loud , try to keep it under 140 decibels")
-        }
-        if (txtVal.length > 0 && txtVal.length <= 140) {
-            $.ajax("/tweets", {
-                method: "POST",
-                dataType: "json",
-                data: { text: txtVal },
-            });
-            location.reload();
-        }
-    });
+   $("#tweetForm").submit(function (event) {
+    let txtVal = $("#tweet-text").val();
+    event.preventDefault();
+    if (valdidation(txtVal)) {
+      if (txtVal.length > 0 && txtVal.length <= 140) {
+        $.ajax("/tweets", {
+          method: "POST",
+          dataType: "json",
+          data: { text: txtVal },
+        });
+        location.reload();
+      }
+    }
+  });
 });
+const formValidation = () => {};
 const loadTweets = () => {
-    $.ajax("/tweets", { method: "GET", dataType: "json" }).then((result) => {
-        renderTweets(result);
-    });
+  $.ajax("/tweets", { method: "GET", dataType: "json" }).then((result) => {
+    renderTweets(result);
+  });
 };
 
 const renderTweets = function (tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-    
-    for (let user in tweets) {
-        $(".tweetsBox").append(createTweetElement(tweets[user])); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-    }
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+
+  for (let user in tweets) {
+    $(".tweetsBox").append(createTweetElement(tweets[user])); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  }
 };
 const escape = function (str) {
   let div = document.createElement("div");
@@ -49,11 +56,9 @@ const escape = function (str) {
   return div.innerHTML;
 };
 const createTweetElement = function (tweet) {
-    
-    
-    const newTxt= escape(tweet["content"]["text"]);
-    let date = timeago.format(new Date(tweet.created_at))
-    let $tweet = $(`
+  const newTxt = escape(tweet["content"]["text"]);
+  let date = timeago.format(new Date(tweet.created_at));
+  let $tweet = $(`
     <article class="old-tweet ">
     <header class="tweeterBoxHeader">
     <div>
@@ -72,7 +77,7 @@ const createTweetElement = function (tweet) {
     </footer>  
     </article>
     `);
-    return $tweet;
+  return $tweet;
 };
 
 // renderTweets(data)

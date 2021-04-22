@@ -66,6 +66,8 @@
         <!-- <h2>Compose Tweet</h2> -->
         <form id="tweetForm" method="POST" action="/tweets">
           <!-- <label for="tweet-text"></label> -->
+          <div id="errNoValue"><i class="fas fa-exclamation-triangle"></i>Text area is empty<i class="fas fa-exclamation-triangle"></i></div>
+          <div id="errExceededValue"><i class="fas fa-exclamation-triangle"></i>Please enter upto 140 characters<i class="fas fa-exclamation-triangle"></i></div>
           <textarea
             name="text"
             placeholder="What are you humming about?"
