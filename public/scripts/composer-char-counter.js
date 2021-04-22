@@ -10,7 +10,10 @@ $(document).ready(function () {
 
     if (newCounter < 0) {
       counter.addClass("counter-red");
+    }else{
+      counter.removeClass("counter-red");
     }
+   
     counter.html(newCounter);
   });
 });
