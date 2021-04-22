@@ -46,4 +46,3 @@ module.exports = function(DataHelpers) {
   return tweetsRoutes;
 
 }
-3

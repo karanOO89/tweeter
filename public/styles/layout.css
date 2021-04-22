@@ -69,6 +69,7 @@ main {
   font-size: 0.5em;
   font-family: "Bungee";
   padding: 0.5em;
+  outline:none;
 }
 #btnSubmit:hover{
   box-shadow: 5px 5px 5px rgba(26, 39, 156, 0.8);
@@ -167,6 +168,9 @@ article:hover #tweetHandle {
   border:2px solid red;
   display: none;
   color: red;
+}
+#tweetForm{
+  display :none;
 }
 /* .new-tweet h2{
   /* align-items:center */

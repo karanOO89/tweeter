@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 // Test / driver code (temporary). Eventually will get this from the server.
-const valdidation = (val) => {
+const validation = (val) => {
   if (val.length === 0) {
     $("#errExceededValue").slideUp();
     $("#errNoValue").slideDown();
@@ -17,24 +17,24 @@ const valdidation = (val) => {
   }
   return true;
 };
+
 $(document).ready(function () {
   loadTweets();
-   $("#tweetForm").submit(function (event) {
+  $(".arrow ").click(function (event) {
+    $("#tweetForm").slideToggle();
+  });
+
+  $("#tweetForm").submit(function (event) {
     let txtVal = $("#tweet-text").val();
     event.preventDefault();
-    if (valdidation(txtVal)) {
-      if (txtVal.length > 0 && txtVal.length <= 140) {
-        $.ajax("/tweets", {
-          method: "POST",
-          dataType: "json",
-          data: { text: txtVal },
-        });
-        location.reload();
-      }
+    if (validation(txtVal)) {
+      $.post("/tweets", $("#tweet-text").serialize()).then((res) => {
+        loadTweets();
+      });
     }
   });
 });
-const formValidation = () => {};
+
 const loadTweets = () => {
   $.ajax("/tweets", { method: "GET", dataType: "json" }).then((result) => {
     renderTweets(result);
@@ -45,9 +45,9 @@ const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-
-  for (let user in tweets) {
-    $(".tweetsBox").append(createTweetElement(tweets[user])); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  console.log(tweets);
+  for (let user of tweets) {
+    $(".tweetsBox").append(createTweetElement(user)); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
   }
 };
 const escape = function (str) {
@@ -55,6 +55,7 @@ const escape = function (str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
+
 const createTweetElement = function (tweet) {
   const newTxt = escape(tweet["content"]["text"]);
   let date = timeago.format(new Date(tweet.created_at));
