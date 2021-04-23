@@ -42,9 +42,8 @@
     <script type="text/javascript" src="/scripts/tweetSubmit.js"></script>
   </head>
 
-  <!-- Top nav bar (fixed) -->
-
-  <body >
+  <body>
+    <!-- Top nav bar (fixed) -->
     <nav class="colWhite">
       <h1 class="textLeft">tweeter</h1>
       <div class="writeDiv">
@@ -54,46 +53,47 @@
         <i class="fas fa-angle-double-down arrow"></i>
       </div>
     </nav>
-    <!-- <div class="resDesign"> -->
-      <div class="resDes">
-    <header class="topHeader">
-      <div >
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2>BatWoman</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
-        <form id="tweetForm" method="POST" action="/tweets">
-          <!-- <label for="tweet-text"></label> -->
-          <div id="errNoValue">
-            <i class="fas fa-exclamation-triangle"></i>Text area is empty<i
-              class="fas fa-exclamation-triangle"
-            ></i>
-          </div>
-          <div id="errExceededValue">
-            <i class="fas fa-exclamation-triangle"></i>Please enter upto 140
-            characters<i class="fas fa-exclamation-triangle"></i>
-          </div>
-          <textarea
-            name="text"
-            placeholder="What are you humming about?"
-            id="tweet-text"
-          ></textarea>
-          <div style="padding-top: 10px">
-            <button id="btnSubmit" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section  class="tweetsBox"></section>
-    </main>
-  </div>
+    <!-- Top Header bar (fixed) -->
+    <div class="resDes">
+      <header class="topHeader">
+        <div>
+          <img src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <div>
+          <p id="name"><b>Amy</b> Mansel</p>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <!-- <h2>Compose Tweet</h2> -->
+          <form id="tweetForm" method="POST" action="/tweets">
+            <!-- <label for="tweet-text"></label> -->
+            <div id="errNoValue">
+              <i class="fas fa-exclamation-triangle"></i>Text area is empty<i
+                class="fas fa-exclamation-triangle"
+              ></i>
+            </div>
+            <div id="errExceededValue">
+              <i class="fas fa-exclamation-triangle"></i>Please enter upto 140
+              characters<i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <textarea
+              name="text"
+              placeholder="What are you humming about?"
+              id="tweet-text"
+            ></textarea>
+            <div style="padding-top: 10px">
+              <button id="btnSubmit" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+        <section class="tweetsBox"></section>
+      </main>
+    </div>
   </body>
-  <!-- </div> -->
 </html>

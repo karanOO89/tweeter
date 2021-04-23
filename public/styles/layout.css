@@ -1,8 +1,4 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+/* css for main layout page  */
 html {
   box-sizing: border-box;
 }
@@ -12,9 +8,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -70,11 +63,11 @@ main {
   font-size: 0.5em;
   font-family: "Bungee";
   padding: 0.5em;
-  outline:none;
+  outline: none;
 }
-#btnSubmit:hover{
+#btnSubmit:hover {
   box-shadow: 5px 5px 5px rgba(26, 39, 156, 0.8);
-  transition: box-shadow .2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
 }
 .new-tweet div output {
   font-size: 0.5em;
@@ -84,6 +77,7 @@ main {
   color: red;
 }
 .old-tweet {
+  flex: 1 1 50%;
   border: 4px solid;
   justify-content: space-evenly;
   height: 300px;
@@ -97,7 +91,6 @@ main {
 .flex-border h3 {
   padding-left: 0.75em;
   word-break: break-all;
-  
 }
 .flex-border {
   border-bottom: 4px solid;
@@ -113,12 +106,6 @@ main {
 
 .old-tweet:hover {
   box-shadow: 5px 5px rgba(87, 81, 81, 0.8);
-}
-article #tweetHandle {
-  display: none;
-}
-article:hover #tweetHandle {
-  display: flex;
 }
 .tweeterBoxHeader div {
   display: flex;
@@ -153,34 +140,29 @@ article:hover #tweetHandle {
 .tweetsBox {
   display: flex;
   flex-direction: column-reverse;
-  
 }
-#errNoValue{
-  padding:.5em;
+#errNoValue {
+  padding: 0.5em;
   display: flex;
   text-align: center;
-  border:2px solid red;
+  border: 2px solid red;
   display: none;
   color: red;
 }
-#errExceededValue{
-  padding:.5em;
+#errExceededValue {
+  padding: 0.5em;
   display: flex;
   text-align: center;
-  border:2px solid red;
+  border: 2px solid red;
   display: none;
   color: red;
 }
-#tweetForm{
-  display :none;
+#tweetForm {
+  display: none;
 }
-.resDes{
+.resDes {
   visibility: none;
 }
-/* .new-tweet h2{
-  /* align-items:center */
-/* } */
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+#name {
+  font-size: 1.5em;
+}

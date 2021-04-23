@@ -1,3 +1,4 @@
+/* css for header */
 .topHeader {
   background-color: #f6be25;
   justify-content: center;
@@ -7,8 +8,4 @@
   width: 100%;
   padding-top: 5em;
 }
-/* @media only screen and (max-width: 768px ) {
-  .topHeader {
-    background-color: red;
-  }
-} */
+
