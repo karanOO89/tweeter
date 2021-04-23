@@ -22,7 +22,7 @@ main {
   width: 90%;
   display: flex;
   margin-left: 5%;
-
+  margin-bottom: 4%;
   justify-content: center;
   flex-direction: column;
   background-color: #f4f1ec;
