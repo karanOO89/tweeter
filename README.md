@@ -27,7 +27,7 @@ TweetBox alongwith time stamps
 validation added for tweeting null value in text area using slideUP/Down feature
 ------------------------------------------------------------------------------------------------------------------
 ![Screenshot from 2021-04-22 23-28-49](https://user-images.githubusercontent.com/65080348/115823340-6c8c0d00-a3c3-11eb-89df-10c947d820d6.png)
-validation added for tweeting more than 140 characters in text area slideUP/Down feature and a counter to count the characters
+validation added for tweeting more than 140 characters in text area using slideUP/Down feature and a counter to count the characters
 ------------------------------------------------------------------------------------------------------------------
 ![Screenshot from 2021-04-22 23-30-44](https://user-images.githubusercontent.com/65080348/115823325-64cc6880-a3c3-11eb-8946-32ecd227cae3.png)
 Responsive design for Mobile Platforms using @media only feature
