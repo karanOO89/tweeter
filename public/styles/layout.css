@@ -28,6 +28,7 @@ body {
 main {
   width: 90%;
   display: flex;
+  margin-left: 5%;
 
   justify-content: center;
   flex-direction: column;
@@ -152,6 +153,7 @@ article:hover #tweetHandle {
 .tweetsBox {
   display: flex;
   flex-direction: column-reverse;
+  
 }
 #errNoValue{
   padding:.5em;
@@ -171,6 +173,9 @@ article:hover #tweetHandle {
 }
 #tweetForm{
   display :none;
+}
+.resDes{
+  visibility: none;
 }
 /* .new-tweet h2{
   /* align-items:center */

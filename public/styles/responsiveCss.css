@@ -1,0 +1,52 @@
+/* @media only screen and (max-width: 768px) {
+  
+    nav {
+      width: 33.3%;
+      line-height: 600px;
+      background-color: red;
+    }
+  
+    .topHeader {
+      width: 66.7%;
+      float: right
+    }
+  
+    .container {
+      clear: right;
+    }
+  } */
+/* .resDes{
+align-items: center;
+} */
+@media only screen and (min-width: 915px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .resDes {
+    display: flex;
+    justify-content: space-between;
+  }
+  .topHeader {
+    flex: 1 1 50%;
+    padding: 1em;
+    max-height: 425px;
+    max-width:400px ;
+    position: sticky;
+    top: 6em;
+    left: 3em;
+  }
+  main {
+    margin-top: 4.7em;
+    margin-right: 2em;
+    margin-left: 8em;
+    flex: 1 1 50%;
+  }
+  .old-tweet {
+    min-width: 400px;
+    max-width: 900px;
+    
+    max-height: 250px;
+  }
+}

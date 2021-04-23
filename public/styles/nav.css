@@ -55,7 +55,6 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  /* min-height: 120px; */
   max-height: 76px;
   align-items: center;
   justify-content: space-between;

@@ -31,7 +31,12 @@ $(document).ready(function () {
       $.post("/tweets", $("#tweet-text").serialize()).then((res) => {
         loadTweets();
       });
+      $("textarea").val("");
+      $(".counter").val("140");
+      
+      
     }
+
   });
 });
 
